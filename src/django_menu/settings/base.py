@@ -34,6 +34,12 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]    
 
+APPS_THIRD_PARTY = []  
+
+APPS = [
+    'apps.users',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
