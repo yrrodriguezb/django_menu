@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<script type="text/javascript">
+    var go_from_select = function(opt) { window.location = window.location.pathname + opt };
+</script>
+
+<h3>{% blocktranslate with filter_title=title %} By {{ filter_title }} {% endblocktranslate %}</h3>
+<ul>
+    <li>
+        <select onchange="go_from_select(this.options[this.selectedIndex].value)" style="width: 100%;">
+        {% for choice in choices %}
+            <option{% if choice.selected %} selected="selected"{% endif %} value="{{ choice.query_string|iriencode }}" data-django={{ choice }}>
+            {{ choice.display }} 
+            </option>
+        {% endfor %}
+        </select>
+    </li>
+</ul>
